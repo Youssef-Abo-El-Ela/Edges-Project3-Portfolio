@@ -7,3 +7,9 @@ export const quoteApiClient = axios.create({
     },
 })
 
+export const blogApiClient = axios.create({
+    baseURL: "https://dev.to/api/articles",
+    headers: {
+        "Content-Type": "application/json",
+    },
+})
