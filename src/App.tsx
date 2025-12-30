@@ -3,6 +3,7 @@ import "./App.css";
 import HomePage from "./features/HomePage/HomePage";
 import NavBar from "./layouts/NavBar";
 import ThemeProviderWrapper from "./context/ThemeProvider";
+import AboutPage from "./features/AboutPage/AboutPage";
 
 function App() {
   return (
@@ -11,6 +12,10 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<div>Projects Page</div>} />
+          <Route path="/contact" element={<div>Contact Page</div>} />
+          <Route path="/blog" element={<div>Blog Page</div>} />
         </Routes>
       </BrowserRouter>
     </ThemeProviderWrapper>

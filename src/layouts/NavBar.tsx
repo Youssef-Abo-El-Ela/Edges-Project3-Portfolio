@@ -15,17 +15,22 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import { NavBarRoutes } from "../enums/NavBar";
 import { Drawer, IconButton, List, ListItemButton, ListItemText, ListItemIcon } from '@mui/material';
+import { changeRoute } from "./NavBarRouteSlice";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 
 function NavBar() {
   const { mode, setMode } = useColorScheme();
+  const dispatch = useAppDispatch();
+  const activeRoute = useAppSelector((state: { currentRoute: { currentRoute: NavBarRoutes } }) => state.currentRoute.currentRoute);
 
   const toggleTheme = () => {
     setMode(mode === "light" ? "dark" : "light");
   };
-  const [activeRoute, setActiveRoute] = useState(NavBarRoutes.HOME);
+
   const handleRouteChange = (route: NavBarRoutes) => {
-    setActiveRoute(route);
+    dispatch(changeRoute(route));
   };
+
   const [mobileOpen, setMobileOpen] = useState(false);
   const toggleMobile = () => setMobileOpen(v => !v);
   return (
@@ -37,7 +42,6 @@ function NavBar() {
           </Icon>
           <Typography sx={{ ml: 1 }}>Youssef Aboelela</Typography>
         </Box>
-
         <Box sx={{ position: 'absolute', left: 0, right: 0, display: { xs: 'none', md: 'flex' }, justifyContent: 'center', gap: 1 }}>
           <Button
             component={NavLink}
