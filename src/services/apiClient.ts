@@ -13,3 +13,10 @@ export const blogApiClient = axios.create({
         "Content-Type": "application/json",
     },
 })
+
+export const githubApiClient = axios.create({
+    baseURL: "https://api.github.com/users/Youssef-Abo-El-Ela/repos",
+    headers: {
+        "Content-Type": "application/json",
+    },
+})

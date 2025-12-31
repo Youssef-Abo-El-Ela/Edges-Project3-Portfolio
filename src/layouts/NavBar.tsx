@@ -5,8 +5,8 @@ import {
   Toolbar,
   Typography,
   Box,
-  useColorScheme,
 } from "@mui/material";
+import { useColorScheme } from "../context/ThemeProvider";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
