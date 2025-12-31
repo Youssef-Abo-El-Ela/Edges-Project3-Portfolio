@@ -11,8 +11,8 @@ function ContactForm() {
         </Card>;
     }
     return (
-        <Grid container size={12} justifyContent="center" alignItems="center" sx={{ flexDirection: "column", mt: "2rem" }}>
-            <Card sx={{ padding: "2rem", maxWidth: "50%", width: { xs: "90%", sm: "70%", md: "40%" } }}>
+        <Grid container size={12} justifyContent="center" alignItems="center" height="80vh" sx={{ flexDirection: "column", mt: "2rem" }}>
+            <Card sx={{ padding: "2rem", maxWidth: { xs: "80%", sm: "60%", md: "50%" }, width: { xs: "90%", sm: "70%", md: "40%" } }}>
                 <CardHeader title="Contact Me" align="center" />
                 <form onSubmit={handleSubmit}>
                     <CardHeader title="Name" />

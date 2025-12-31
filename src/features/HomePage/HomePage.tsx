@@ -38,7 +38,7 @@ function HomePage() {
     }, []);
 
     return (
-        <Box>
+        <Box sx={{ p: 4 }}>
             <Grid container spacing={2} size={{ xs: 12, md: 6 }}>
                 <Grid container justifyContent="center" alignItems="center">
                     <img
@@ -46,7 +46,7 @@ function HomePage() {
                         alt="Profile"
                         style={{ width: "30%", borderRadius: "50%" }}
                     />
-                    <Typography variant="h2">
+                    <Typography variant="h2" align="center" sx={{ mt: 2 }}>
                         Welcome to My Portfolio
                     </Typography>
                 </Grid>
@@ -63,7 +63,7 @@ function HomePage() {
                     <Button component={NavLink} to="/contact" variant="contained" onClick={() => dispatch(changeRoute(NavBarRoutes.CONTACT))}>Contact Me!</Button>
                 </Box>
             </Grid>
-            <Card sx={{maxWidth: "50%" , my: "1.5rem", mx: "auto" }}>
+            <Card sx={{maxWidth: { xs: "90%", sm: "70%", md: "50%" }, my: "1.5rem", mx: "auto" }}>
                 <CardContent>
                     <Typography variant="h5" align="center" >
                         {loadingQuote ? "Loading..." : currentQuote}
